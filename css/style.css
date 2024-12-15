@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carrusel{
+    overflow: hidden;
+    position: relative;
+}
+
+.carrusel__flecha{
+    width: 5rem;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.carrusel__flecha:hover{
+    background-color: #9ea9bd63;
+}
+
+.carrusel__flecha--izquierda{
+    left: 0;
+    top:0;
+    transform: translate(0%, 0%);
+}
+
+.carrusel__flecha--derecha{
+    left: 100%;
+    top: 0;
+    transform: translate(-100%, 0%);
+}
+.carrusel__imagenes{
+    display: flex;
+    flex-wrap: nowrap;
+    transition:  all 1s ease-in;
+}
+
+.carrusel__imagenes img{
+    width: 100%;
+}
+
+.carrusel__texto{
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
+.carrusel__texto__titulo{
+    color: #fff;
+    font-weight: 600;
+    font-size: 10rem;
+}
+
+.carrusel__texto__parrafo{
+    color: #fff;
+    font-size: 2rem;
+    margin-top: -2rem;
+}
+
+.main{
+    padding-top: 3rem;
+    background-color: #CCC5B9;
+}
+
+.recetas__titulo{
+    font-size: 4rem;
+    text-align: center;
+    color: #474747;
+}
+
+.recetas__contenedor{
+    margin: 2rem auto 0;
+    padding: 3rem;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.receta{
+    background-color: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform ease-out .4s;
+}
+.receta:hover{
+    transform: scale(1.04);
+}
+.receta__link{
+    text-decoration: none;
+}
+
+.link__img{
+    object-fit: cover;
+    width: 100%;
+    height: 85%;
+}
+
+.link__titulo{
+    text-align: center;
+    color: #474747;
+    font-size: 1.5rem;
+    font-weight: 900;
+    transition: color ease-out .4s;
+}
+
+.receta__link:hover .link__titulo{
+    color: #99A8FF ;
+}
+
+.footer{
+    padding: 2rem;
+    background-color: #A99F89;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #474747;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer__pagina{
+    font-size: 1.7rem;
+}
+
+.footer__link{
+    color: #474747;
+}
+
+.footer__link:hover{
+    color: #fff;
+}
+
+@media screen and (min-width:768px) and (max-width:1023px) {
+    .carrusel__texto__titulo{
+        font-size: 8rem;
+    }
+    
+    .carrusel__texto__parrafo{
+        font-size: 1.5rem;
+        margin-top: -1.5rem;
+    }
+
+    .recetas__titulo{
+        font-size: 3.5rem;
+    }
+
+    .recetas__contenedor{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .carrusel__flecha{
+        width: 3rem;
+    }
+
+    .carrusel__texto__titulo{
+        font-size: 5rem;
+    }
+
+    .carrusel__texto__parrafo{
+        font-size: 1rem;
+        margin-top: -.5rem;
+    }
+
+    .recetas__titulo{
+        font-size: 2.5rem;
+    }
+    
+    .recetas__contenedor{
+        margin: 0 auto;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .footer{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+}
